@@ -4,35 +4,40 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :fullname %><br />
-    <%= f.email_field :fullname, autofocus: true, autocomplete: "fullname" %>
+   <%= f.label :username %><br />
+   <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+  </div>
+
+  <div class="field">
+   <%= f.label :fullname %><br />
+   <%= f.text_field :fullname, autofocus: true, autocomplete: "fullname" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+   <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+   <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+   <%= f.password_field :password, autocomplete: "new-password" %>
+   <% if @minimum_password_length %>
+    <br />
+     <em><%= @minimum_password_length %> characters minimum</em>
+   <% end %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+   <%= f.label :password_confirmation %><br />
+   <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+   <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+   <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+   <%= f.submit "Update" %>
   </div>
 <% end %>
 
